@@ -1,10 +1,20 @@
 ---
-description: Guide doc for my github public projects and docs.
+description: Guide doc for my github public projects and docs.（我的个人github公开仓库和文档的快速导航）
 ---
 
 # 🤔 Guide doc 引导文档
 
-## 知识文档：
+## Github homepage
+
+***
+
+[https://github.com/lsdmtr](https://github.com/lsdmtr)
+
+***
+
+
+
+## Knowledge Doc：
 
 ***
 
