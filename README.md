@@ -8,7 +8,9 @@ description: Guide doc for my github public projects and docs.（我的个人git
 
 ***
 
-[https://github.com/lsdmtr](https://github.com/lsdmtr)
+#### Repository: [https://github.com/lsdmtr](https://github.com/lsdmtr)
+
+#### Doc website: [https://lsdmtr.gitbook.io/lsdmtr-docs](https://lsdmtr.gitbook.io/lsdmtr-docs)
 
 
 
