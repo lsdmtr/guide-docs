@@ -14,6 +14,8 @@ description: 实现一个Mcp Server，用来对代码进行审查
 当我们去询问一个大模型，今天的天气如何，大模型是无法回答的，因为这是实时数据（当然现在有的大模型例如gpt和deepseek有联网搜索能力，但是联网搜到的数据不一定是准确的）。所以当我们需要大模型拥有一些处理额外数据和文件的能力，我们可以通过Mcp Server去给他提供一个对应的能力或工具。
 {% endhint %}
 
+
+
 ## 2.Mcp Server如何帮AI扩展能力
 
 上一部分说Mcp Server可以帮AI扩展能力，那么他是怎么一个工作方式呢？
@@ -54,6 +56,8 @@ description: 实现一个Mcp Server，用来对代码进行审查
   * Tools（工具）：提供给AI模型的可以调用的函数，用来处理数据
   * Resources（资源）：提供给AI模型的数据源，比如文档内容、配置信息等
   * Prompts（提示词）：预定义的提示模板和工作流
+
+
 
 ## 4.实现一个简易的Mcp Server
 
@@ -114,5 +118,56 @@ async function start() {
 start();
 ```
 
-### (2).实现服务器配置
+### (2).服务配置
 
+我们在入口文件那里搞了一个createMCPServer的操作来启动服务，现在我们在对应目录下新建这个文件
+
+{% code lineNumbers="true" %}
+```javascript
+/** Server 主文件 */
+const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
+const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
+
+/** 创建并配置 MCP 服务器 */
+async function createMCPServer() {
+  const server = new Server({
+    name: 'code-review-server',
+    version: '1.0.0',
+    transport: new StdioServerTransport(),
+  }, 
+  {
+    capabilities: {
+      tools: {},
+      resources: {},
+      prompts: {}
+    }
+  });
+
+  return server;
+}
+
+module.exports = {
+  createMCPServer
+}
+```
+{% endcode %}
+
+我们通过sdk提供的Server方法新建了一个Mcp Server，我们来逐步分看一下都是做什么的。
+
+#### <1>. 基础属性
+
+{% code lineNumbers="true" %}
+```javascript
+const server = new Server({
+    name: 'code-review-server',
+    version: '1.0.0',
+    transport: new StdioServerTransport(),
+  }, 
+```
+{% endcode %}
+
+这部分定义了服务的名称(name)、版本信息(version)，以及通信方式(transport)。
+
+{% hint style="warning" %}
+有一点需要注意的是，这个地方的通信方式(transport)，是有一种规范的，他有一套标准的输入输出，是用来和大模型Agent来进行通信交互的，而不是用来发送http请求，所以这个地方不需要用axios来实现，可以直接调用sdk的方法进行初始化.
+{% endhint %}
