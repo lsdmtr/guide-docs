@@ -171,3 +171,43 @@ const server = new Server({
 {% hint style="warning" %}
 有一点需要注意的是，这个地方的通信方式(transport)，是有一种规范的，他有一套标准的输入输出，是用来和大模型Agent来进行通信交互的，而不是用来发送http请求，所以这个地方不需要用axios来实现，可以直接调用sdk的方法进行初始化.
 {% endhint %}
+
+
+
+#### <2>. 功能相关配置
+
+{% code lineNumbers="true" fullWidth="false" %}
+```javascript
+capabilities: {
+      tools: {},
+      resources: {},
+      prompts: {}
+    }
+```
+{% endcode %}
+
+这里有三个重要属性
+
+*   Tools
+
+    Tools里面的就是我们这个Mcp Server给Agent提供的功能方法，比如我们给Agent提供一个获取天气的方法getWeather，这里就需要对应的注册一个getWeather。
+*   Resources
+
+    Resources定义Agent可以读取的结构化的静态数据或状态性资源。它通常用于查阅类的能力，比如数据库条目、配置信息、数据文档等等。举例来说，假如我们的Agent要进行一个代码处理的任务，resources里我们就可以提前存入项目文件的路径等信息，这样Agent在执行任务的时候，就可以直接在上下文里找到，不用再去询问找到要处理哪个项目。
+*   Prompts
+
+    Prompts是一类预设的Prompt模板，提供给Agent去执行某些任务。比如这样的，Agent在使用这个prompt的时候，只要填入input或者name就可以组成完整的prompt。
+
+    ```javascript
+    prompts: {
+      summarize: {
+        description: '将文本压缩为 3 句话摘要',
+        prompt: '请将以下内容总结为三句话：{{input}}',
+      },
+      reviewerGreeting: {
+        description: '打招呼模板',
+        prompt: '你好 {{name}}，我是你的代码审阅助手。',
+      },
+    }
+    ```
+
