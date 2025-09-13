@@ -42,12 +42,12 @@ wsl --install
 
 安装完毕以后可能会弹出配置弹窗:
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 如果没有弹出也可以在windows中搜索WSL，WSL Settings即可打开刚才的页面
 
-<figure><img src="../../.gitbook/assets/image.png" alt="" width="464"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt="" width="464"><figcaption></figcaption></figure>
 
 安装完毕以后默认是在C盘，如果想找到具体的路径：可以在文件系统的地址栏汇中打开WSL的安装目录：**%LOCALAPPDATA%\WSL**
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="563"><figcaption></figcaption></figure>

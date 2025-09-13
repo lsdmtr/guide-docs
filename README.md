@@ -1,5 +1,5 @@
 ---
-description: Guide doc for my github public projects and docs.（我的个人github公开仓库和文档的快速导航）
+description: Guide doc for my github public projects and docs.
 ---
 
 # 🤔 Guide doc 引导文档

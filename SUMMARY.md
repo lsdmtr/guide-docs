@@ -16,5 +16,5 @@
 
 * [💁 流水线和容器](cicd-and-container/liu-shui-xian-he-rong-qi/README.md)
   * [自动化构建部署和容器化改造](cicd-and-container/liu-shui-xian-he-rong-qi/zi-dong-hua-gou-jian-bu-shu-he-rong-qi-hua-gai-zao/README.md)
-    * [1.给服务器配置代理](cicd-and-container/liu-shui-xian-he-rong-qi/zi-dong-hua-gou-jian-bu-shu-he-rong-qi-hua-gai-zao/1.-gei-fu-wu-qi-pei-zhi-dai-li.md)
-    * [2.安装docker和docker-compose](cicd-and-container/liu-shui-xian-he-rong-qi/zi-dong-hua-gou-jian-bu-shu-he-rong-qi-hua-gai-zao/2.-an-zhuang-docker-he-dockercompose.md)
+    * [🫡 给服务器配置代理](cicd-and-container/liu-shui-xian-he-rong-qi/zi-dong-hua-gou-jian-bu-shu-he-rong-qi-hua-gai-zao/gei-fu-wu-qi-pei-zhi-dai-li.md)
+    * [🫡 安装docker和docker-compose](cicd-and-container/liu-shui-xian-he-rong-qi/zi-dong-hua-gou-jian-bu-shu-he-rong-qi-hua-gai-zao/an-zhuang-docker-he-dockercompose.md)
